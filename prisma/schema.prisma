@@ -23,6 +23,21 @@ model Transaksi {
   transactionDate DateTime @default(now())
   createBy        String 
   createOn        DateTime @default(now())
+
+  @@map("transaksi")
+
+}
+
+model Users {
+    id            Int      @id @default(autoincrement())
+    username      String   @unique
+    name          String
+    password      String
+    createdAt     DateTime @default(now())
+    updatedAt     DateTime @updatedAt
+
+  @@map("users")
+
 }
 
 
