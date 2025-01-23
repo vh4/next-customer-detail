@@ -1,6 +1,8 @@
 ## Getting Started
 
-URL deployment => https://next-customer-detail.vercel.app/
+URL deployment => https://next-customer-detail.vercel.app/ . bisa pakai username: root dan pass:anakmami123
+
+atau juga bisa registrasi sendiri.
 
 # SOAL TEKNIKAL
 
