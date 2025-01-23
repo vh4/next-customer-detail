@@ -60,16 +60,16 @@ export function TabsAuth() {
         password: data.password,
       });
 
-      if (result?.error) {
-        toast.error(result.error);
+      if (result?.status !== 200) {
+        toast.error('username or password salah.');
       } else {
         toast.success('Login Berhasil');
-        resetLoginForm(); // Reset form
       }
     } catch (error: any) {
       toast.error(error.message);
     } finally {
       setIsLoading(false);
+      resetLoginForm(); // Reset form
     }
   };
 

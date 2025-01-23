@@ -1,4 +1,5 @@
 import { UserDto } from "@/dto/user.dto";
+import logger from "@/lib/logger";
 import { prisma } from "@/lib/prisma";
 
 export const create = async (data: UserDto): Promise<UserDto> => {
@@ -13,6 +14,7 @@ export const findByUsername = async (username: string): Promise<UserDto | null> 
       username,
     },
   });
+  logger.info(user);
   return user;
 };
 
