@@ -1,6 +1,6 @@
 ## Getting Started
 
-URL deployment => 
+URL deployment => https://next-customer-detail.vercel.app/
 
 # SOAL TEKNIKAL
 
