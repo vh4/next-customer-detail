@@ -1,4 +1,3 @@
-import { initDB } from "@/lib/prisma";
 import { TransaksiPipe } from "@/model/transaksi.model";
 import { findAll, create } from "@/repository/transaksi";
 import { NextResponse } from "next/server";
@@ -6,7 +5,6 @@ import { z } from "zod";
 
 export async function GET() {
   try {
-    await initDB();
     const transactions = await findAll();
     return NextResponse.json(transactions);
   } catch (error: any) {
