@@ -1,5 +1,7 @@
 ## Getting Started
 
+URL deployment => 
+
 # SOAL TEKNIKAL
 
 - bisa di lihat di pdf IT Logical Programming Test.pdf
