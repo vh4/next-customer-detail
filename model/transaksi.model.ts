@@ -10,9 +10,7 @@ export const TransaksiPipe = z.object({
     .int()
     .min(0, "Status harus bernilai 0 atau 1")
     .max(1, "Status harus bernilai 0 atau 1"),
-  transactionDate: z.date().optional(),
   createBy: z.string().nonempty("Dibuat Oleh wajib diisi"),
-  createOn: z.date().optional(),
 });
 
 export const idSchemaPipe = z.number().positive("ID harus berupa angka positif");

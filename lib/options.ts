@@ -44,20 +44,21 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/",
+    signIn: "/login",
   },
   session: {
     maxAge: 60 * 60,
+    strategy:'jwt'
   },
   callbacks: {
-    async jwt({ token, user, session, trigger }) {
-      if (trigger === "update") return { ...token, ...session };
+    async jwt({ token, user }) {
+      return { ...token, ...user }
+    },
 
-      if (user) return { ...token, ...user };
-    },
-    async session({ session }) {
-      session = { ...session };
-      return session;
-    },
-  },
+    async session({ session, token } : any) {
+      session = { ...session, ...token }
+
+      return session
+    }
+  }
 };

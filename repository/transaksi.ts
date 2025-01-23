@@ -2,7 +2,11 @@ import { transaksiDto } from "@/dto/transaksi.dto";
 import { prisma as db } from "@/lib/prisma";
 
 export const findAll = async (): Promise<transaksiDto[]> => {
-  return await db.transaksi.findMany();
+  return await db.transaksi.findMany({
+    orderBy: {
+      createOn: 'desc', 
+    },
+  });
 };
 
 export const findById = async (id: number): Promise<transaksiDto | null> => {

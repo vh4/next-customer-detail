@@ -16,6 +16,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 interface LoginFormData {
   username: string;
@@ -31,6 +32,7 @@ interface RegisterFormData {
 
 export function TabsAuth() {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter()
 
   const {
     register: loginRegister,
@@ -64,6 +66,9 @@ export function TabsAuth() {
         toast.error('username or password salah.');
       } else {
         toast.success('Login Berhasil');
+        setTimeout(() => {
+          router.push('/home');
+        }, 1000);
       }
     } catch (error: any) {
       toast.error(error.message);

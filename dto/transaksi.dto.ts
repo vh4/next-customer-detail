@@ -6,5 +6,5 @@ export interface transaksiDto {
   status: number;
   transactionDate?: Date;
   createBy: string;
-  createOn?: Date; 
+  createOn?: string; 
 }

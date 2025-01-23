@@ -41,5 +41,13 @@ model Users {
 }
 
 
+model Status {
+    id            Int      @id @default(autoincrement())
+    status      String 
+  @@map("status")
+
+}
+
+
 
 

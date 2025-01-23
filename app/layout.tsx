@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Toaster } from 'react-hot-toast';
+import Providers from "./components/Providers"; // Import komponen client untuk Provider
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,8 +29,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster />
-        {children}
+        {/* Bungkus anak-anak dengan komponen Providers */}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
